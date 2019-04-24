@@ -6,7 +6,7 @@ var ErrorResponse = iri.service.dto.ErrorResponse;
 var fs = require('fs');
 const { exec } = require('child_process');
 
-const runScan = (request) => {
+function runScan(request){
     exec('bash runScan.sh >> scan.log', (err, stdout, stderr) => {
         if(!err){ 
             var today = new Date();
@@ -41,7 +41,7 @@ const runScan = (request) => {
     });
 }
 
-const setup = () => {
+function setup() {
     exec('bash setup.sh >> setup.log', (err, stdout, stderr) => {
         if(!err){
             status = "Complete";
@@ -54,7 +54,6 @@ const setup = () => {
         }
     });
 }
-
 
 API.put("startScan", new Callable({ call: runScan })
 API.put("setup", new Callable({ call: setup })
