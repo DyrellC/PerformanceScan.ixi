@@ -4,10 +4,10 @@ var Response = iri.service.dto.IXIResponse;
 var ErrorResponse = iri.service.dto.ErrorResponse;
 
 var fs = require('fs');
-const { exec } = require('child_process');
+var execute = require('child_process');
 
 function runScan(request){
-    exec('bash runScan.sh >> scan.log', (err, stdout, stderr) => {
+    execute('bash runScan.sh >> scan.log', (err, stdout, stderr) => {
         if(!err){ 
             var today = new Date();
             var dd = String(today.getDate()).padStart(2, '0');
