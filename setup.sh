@@ -8,11 +8,7 @@ echo "**********"
 echo "Installing requirements"
 whoami
 
-nohup apt-get update &> update.log &
-
-sleep 600
-
-cat update.log
+apt-get update
 
 #python3 -m ensurepip
 #apt-get install python3-venv -y
