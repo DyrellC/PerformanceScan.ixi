@@ -6,7 +6,7 @@ echo "*********"
 cat requirements.txt
 echo "**********"
 echo "Installing requirements"
-apt-get update
+sudo apt-get update
 cat requirements.txt | xargs apt-get install -y
 
 echo "Installed requirements"
