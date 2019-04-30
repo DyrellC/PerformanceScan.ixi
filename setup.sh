@@ -6,7 +6,8 @@ echo "*********"
 cat requirements.txt
 echo "**********"
 echo "Installing requirements"
-sed 's/#.*//' requirements.txt | xargs sudo apt-get install -y
+cat requirements.txt | xargs sudo apt-get install -y
+
 echo"Installed requirements"
 echo "Starting Venv"
 python3 -m venv ./venv
