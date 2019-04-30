@@ -48,7 +48,7 @@ function runScan(request){
         });    
             
     } catch (err) {
-        var command = new Builder('ls', './ixi/PerformanceScan/2019-04-30/');   
+        var command = new Builder('ls', './ixi/PerformanceScan/');   
         command.redirectErrorStream(true);        
         var pr = command.start();  
         var reader = new Reader(new InputReader(pr.getInputStream()));        
