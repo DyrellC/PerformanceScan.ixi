@@ -10,16 +10,16 @@ whoami
 
 nohup apt-get update &> update.log &
 
-sleep 60
+sleep 20
 
 cat update.log
 
-python3 -m ensurepip
-apt-get install python3-venv -y
-apt-get install python3-tk -y
-apt-get install python3-pip -y
-apt-get install python3-dev -y
-apt-get install build-essentials -y
+#python3 -m ensurepip
+#apt-get install python3-venv -y
+#apt-get install python3-tk -y
+#apt-get install python3-pip -y
+#apt-get install python3-dev -y
+#apt-get install build-essentials -y
 
 
 echo "Installed requirements"
