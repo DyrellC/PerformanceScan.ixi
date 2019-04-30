@@ -7,8 +7,13 @@ cat requirements.txt
 echo "**********"
 echo "Installing requirements"
 whoami
-sudo apt-get update
-cat requirements.txt | xargs sudo apt-get install -y
+apt-get install python3 -y
+apt-get install python3-venv -y
+apt-get install python3-tk -y
+apt-get install python3-pip -y
+apt-get install python3-dev -y
+apt-get install build-essentials -y
+
 
 echo "Installed requirements"
 echo "Starting Venv"
