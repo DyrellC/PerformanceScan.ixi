@@ -1,5 +1,6 @@
 echo "Downloading apt requirments "
 cd ixi/PerformanceScan
+ls 
 sed 's/#.*//' requirements.txt | xargs sudo apt-get install -y
 
 echo "Starting Venv"
