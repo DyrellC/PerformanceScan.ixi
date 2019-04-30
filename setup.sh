@@ -7,12 +7,11 @@ cat requirements.txt
 echo "**********"
 echo "Installing requirements"
 whoami
-apt-get install python3 -y
-apt-get install python3-venv -y
-apt-get install python3-tk -y
-apt-get install python3-pip -y
-apt-get install python3-dev -y
-apt-get install build-essentials -y
+sudo apt-get install python3-venv -y
+sudo apt-get install python3-tk -y
+sudo apt-get install python3-pip -y
+sudo apt-get install python3-dev -y
+sudo apt-get install build-essentials -y
 
 
 echo "Installed requirements"
