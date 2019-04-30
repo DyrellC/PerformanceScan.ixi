@@ -10,7 +10,7 @@ whoami
 
 nohup apt-get update &> update.log &
 
-sleep 20
+sleep 600
 
 cat update.log
 
