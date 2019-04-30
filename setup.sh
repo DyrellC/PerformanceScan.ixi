@@ -10,7 +10,7 @@ whoami
 
 apt-get update
 
-#python3 -m ensurepip
+cat requirements.txt | xargs apt-get install -y 
 #apt-get install python3-venv -y
 #apt-get install python3-tk -y
 #apt-get install python3-pip -y
