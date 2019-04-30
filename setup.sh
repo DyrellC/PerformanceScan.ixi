@@ -8,7 +8,7 @@ echo "**********"
 echo "Installing requirements"
 whoami
 sudo apt-get update
-cat requirements.txt | xargs apt-get install -y
+cat requirements.txt | xargs sudo apt-get install -y
 
 echo "Installed requirements"
 echo "Starting Venv"
