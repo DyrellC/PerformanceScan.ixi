@@ -37,7 +37,7 @@ function runScan(request){
   
         today = yyyy + "-" + mm + "-" + dd + "/";  
 
-        var rawPath = paths.get("./ixi/PerformanceScan/log/" + today + "/" + apiCall + "/raw.log");
+        var rawPath = paths.get("./ixi/PerformanceScan/Logs/" + today + "/" + apiCall + "/raw.log");
         var logFile = new file(rawPath);
         var lines = new string(files.readAllLines(rawPath, charset.UTF_8));     
         if(lines.length == 0){
@@ -48,7 +48,7 @@ function runScan(request){
         });    
             
     } catch (err) {
-        var command = new Builder('ls', './ixi/PerformanceScan/log/');   
+        var command = new Builder('cat', './ixi/PerformanceScan/Scan.log');   
         command.redirectErrorStream(true);        
         var pr = command.start();  
         var reader = new Reader(new InputReader(pr.getInputStream()));        
