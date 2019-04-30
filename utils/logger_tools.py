@@ -22,7 +22,7 @@ def get_raw_logger(test):
 
 
 def make_log_directory(test):
-    directories = [test.get_base_directory(), test.get_log_directory()]
+    directories = [test.get_base_directory(), test.get_date_log_directory(), test.get_log_directory()]
     for directory in directories:
         if os.path.exists(directory):
             if directory == test.get_base_directory():

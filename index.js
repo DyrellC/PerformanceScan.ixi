@@ -24,8 +24,10 @@ var Thread = java.lang.Thread;
 
 function runScan(request){
     try{
-        var apiCall = request.get("apiCall");        
-        var command = new Builder('bash', 'ixi/PerformanceScan/runScan.sh', '-c', apiCall);   
+        print(request);
+        var apiCall = request.get("apiCall");    
+        print(apiCall);    
+        var command = new Builder('bash', 'ixi/PerformanceScan/runScan.sh', apiCall);   
         command.redirectErrorStream(true);        
         var pr = command.start();  
         Thread.sleep(200000);    
@@ -37,19 +39,18 @@ function runScan(request){
   
         today = yyyy + "-" + mm + "-" + dd + "/";  
 
-        var rawPath = paths.get("./ixi/PerformanceScan/Logs/" + today + "raw.log");
+        var rawPath = paths.get("./ixi/PerformanceScan/Logs/" + today + "/" + apiCall + "/raw.log");
         var logFile = new file(rawPath);
-        var lines = files.readAllLines(rawPath, charset.UTF_8);     
+        var lines = new string(files.readAllLines(rawPath, charset.UTF_8));     
         if(lines.length == 0){
-            lines = "Empty file";
+            lines = new string("Empty file");
         }        
-        
         return Response.create({ 
             output: lines
         });    
             
     } catch (err) {
-        ErrorResponse.create(new string(err));
+        return ErrorResponse.create(new string(err));
     }
 }
 
@@ -64,7 +65,7 @@ function setup() {
             status: status,
         });
     } catch (err) {
-        ErrorResponse.create(new string(err));
+        return ErrorResponse.create(new string(err));
     }
 }
 

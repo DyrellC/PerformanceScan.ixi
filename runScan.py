@@ -68,6 +68,7 @@ for arg in args:
         test.apiCall = args[args.index(arg) + 1]
 
 test.set_base_directory(base_output_dir)
+test.set_date_log_directory(base_output_dir + datetime.datetime.now().date().__str__() + "/")
 test.set_log_directory(base_output_dir + datetime.datetime.now().date().__str__() + "/" + test.apiCall + "/")
 logging.make_log_directory(test)
 raw_logger = logging.get_raw_logger(test)

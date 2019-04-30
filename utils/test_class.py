@@ -1,6 +1,7 @@
 class Test:
     base_directory = "./"
     log_directory = "./"
+    date_log_directory = "./"
 
     def __init__(self):
         self.cpu_usage = []
@@ -72,5 +73,9 @@ class Test:
     def set_base_directory(self, dir):
         self.base_directory = dir
 
+    def get_date_log_directory(self):
+        return self.date_log_directory
 
+    def set_date_log_directory(self, dir):
+        self.date_log_directory = dir
 
