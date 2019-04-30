@@ -67,8 +67,12 @@ function setup() {
         var command = new Builder('bash', 'ixi/PerformanceScan/setup.sh');
         var pr = command.start();          
         Thread.sleep(120000);      
-        
-        var status = new string("Complete");
+        var reader = new Reader(new InputReader(pr.getInputStream()));        
+        var status = "";
+        var line;
+        while((line = reader.readLine()) != null){
+            status += line;
+        }//var status = new string("Complete");
         return Response.create({
             status: status,
         });
