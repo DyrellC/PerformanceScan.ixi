@@ -1,7 +1,6 @@
 echo "Downloading apt requirments "
+source ./venv/bin/activate
 cd ixi/PerformanceScan
-
-sed 's/#.*//' requirements.txt | xargs sudo apt-get install -y
 
 echo "Startup Scan Started"
 echo $1
