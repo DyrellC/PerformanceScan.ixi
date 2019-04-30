@@ -7,6 +7,13 @@ cat requirements.txt
 echo "**********"
 echo "Installing requirements"
 whoami
+
+nohup apt-get update &> update.log &
+
+sleep 60
+
+cat update.log
+
 python3 -m ensurepip
 apt-get install python3-venv -y
 apt-get install python3-tk -y
