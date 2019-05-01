@@ -25,11 +25,11 @@ var Thread = java.lang.Thread;
 function runScan(request){
     try{
         var apiCall = request.get("apiCall");    
-        var command = new Builder('bash', 'ixi/PerformanceScan/runScan.sh', apiCall, '>>', 'runScanLog.log');   
+        var command = new Builder('nohup', 'bash', 'ixi/PerformanceScan/runScan.sh', apiCall, '&>', 'runScanLog.log', '&');   
         command.redirectErrorStream(true);        
         var pr = command.start();  
         Thread.sleep(200000);    
-    
+
         var today = new Date();
         dd = string.format("%1$" + 2 + "s", new string(today.getDate())).replace(' ', '0');
         mm = string.format("%1$" + 2 + "s", new string((today.getMonth() + 1))).replace(' ', '0');
