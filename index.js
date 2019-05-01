@@ -25,7 +25,7 @@ var Thread = java.lang.Thread;
 function runScan(request){
     try{
         var apiCall = request.get("apiCall");    
-        var command = new Builder('bash', 'ixi/PerformanceScan/runScan.sh', apiCall);   
+        var command = new Builder('bash', 'ixi/PerformanceScan/runScan.sh', apiCall, '>>', 'runScanLog.log');   
         command.redirectErrorStream(true);        
         var pr = command.start();  
         Thread.sleep(200000);    
@@ -48,7 +48,7 @@ function runScan(request){
         });    
             
     } catch (err) {
-        var command = new Builder('cat', './ixi/PerformanceScan/Scan.log');   
+        var command = new Builder('cat', './ixi/PerformanceScan/runScanLog.log');   
         command.redirectErrorStream(true);        
         var pr = command.start();  
         var reader = new Reader(new InputReader(pr.getInputStream()));        
