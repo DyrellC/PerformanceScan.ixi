@@ -3,7 +3,7 @@ echo "Starting scans"
 echo ${pwd}
 echo ls
 
-source ./venv/bin/activate
+#source ./venv/bin/activate
 cd ixi/PerformanceScan
 
 echo "Startup Scan Started"
@@ -23,4 +23,4 @@ for i in {1..20}
     done
 
 cd ../../
-deactivate
+#deactivate
