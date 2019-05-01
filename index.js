@@ -48,7 +48,7 @@ function runScan(request){
         });    
             
     } catch (err) {
-        var command = new Builder('cat', './ixi/PerformanceScan/runScanLog.log');   
+        var command = new Builder('cat', 'runScanLog.log');   
         command.redirectErrorStream(true);        
         var pr = command.start();  
         var reader = new Reader(new InputReader(pr.getInputStream()));        
